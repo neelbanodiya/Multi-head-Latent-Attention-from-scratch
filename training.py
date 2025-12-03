@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Dict, Optional
 import json
 from data.data_prep import prepare_shakespeare_data
-from models.character_languge_model import CharacterLanguageModel
+from models.character_language_model import CharacterLanguageModel
 
 class Trainer:
     """
