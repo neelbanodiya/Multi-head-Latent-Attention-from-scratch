@@ -17,7 +17,7 @@ import numpy as np
 from typing import Tuple, List, Dict
 
 #Opening my text file that contain the shakespeare text
-with open("/home/neel/Code/MLA/data/shakespeare.txt", "r") as file:
+with open("data/shakespeare.txt", "r") as file:
   data = file.read()
 
 
