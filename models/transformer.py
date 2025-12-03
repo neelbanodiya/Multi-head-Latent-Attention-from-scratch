@@ -6,7 +6,12 @@ Combines MLA with Feed-Forward Network, Layer Norms, and Residual Connections
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from mla import MultiHeadLatentAttention, create_causal_mask
+try:
+    # allow import when package is installed or top-level name exists
+    from mla import MultiHeadLatentAttention, create_causal_mask
+except ModuleNotFoundError:
+    # fallback when running main.py from project root
+    from .mla import MultiHeadLatentAttention, create_causal_mask
 
 
 class FeedForward(nn.Module):

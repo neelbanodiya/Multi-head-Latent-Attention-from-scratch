@@ -8,8 +8,20 @@ import torch.nn as nn
 import torch.nn.functional as F
 import math
 from typing import Optional, Tuple, Dict
-from mla import MultiHeadLatentAttention, create_causal_mask
-from transformer import TransformerBlock
+try:
+    # allow import when package is installed or top-level name exists
+    from transformer import TransformerBlock
+except ModuleNotFoundError:
+    # fallback when running main.py from project root
+    from .transformer import TransformerBlock
+    
+try:
+    # allow import when package is installed or top-level name exists
+    from mla import MultiHeadLatentAttention, create_causal_mask
+except ModuleNotFoundError:
+    # fallback when running main.py from project root
+    from .mla import MultiHeadLatentAttention, create_causal_mask
+# ...existing code...
 
 
 class PositionalEmbedding(nn.Module):
