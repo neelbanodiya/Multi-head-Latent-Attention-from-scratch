@@ -1,5 +1,5 @@
 from data.data_prep import prepare_shakespeare_data
-from models.character_languge_model import CharacterLanguageModel
+from models.character_language_model import CharacterLanguageModel
 from training import Trainer, create_training_config
 
 # 1. Prepare data
